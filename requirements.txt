@@ -1,0 +1,16 @@
+  fastapi==0.111.0
+uvicorn[standard]==0.29.0
+python-jose[cryptography]==3.3.0
+bcrypt>=4.1.0
+python-multipart==0.0.9
+python-dotenv==1.0.1
+pydantic==2.7.1
+numpy==1.26.4
+opencv-python==4.9.0.80
+Pillow==10.3.0
+loguru==0.7.2
+tensorflow==2.16.1   # nạp model CNN nhận diện hình (ml/models/shape_model.keras)
+ultralytics>=8.2.0   # YOLOv8 nhận diện vật thể realtime (80 lớp COCO)
+requests>=2.31.0     # gọi Gemini Vision API cho nhận diện hình từ webcam
+onnx==1.16.2         # export YOLO sang ONNX. KHÔNG nâng lên 1.17+ vì TF 2.16.1 cần ml-dtypes 0.3.x
+onnxslim<0.1.50      # >=0.1.50 kéo theo ml-dtypes mới phá vỡ TensorFlow
