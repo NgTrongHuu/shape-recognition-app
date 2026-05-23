@@ -1,8 +1,0 @@
-{
-  "min_area": 600,
-  "approx_epsilon": 0.04,
-  "blur_kernel": 5,
-  "unit": "px",
-  "draw_labels": true,
-  "min_confidence": 0.5
-}
