@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: #030f08;
+    color: #f0fdf4;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0d2b1e;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1a5c38;
+    border-radius: 3px;
+  }
+}
+
+@layer utilities {
+  .glass {
+    background: rgba(13, 43, 30, 0.6);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(42, 171, 123, 0.12);
+  }
+  .glass-light {
+    background: rgba(26, 92, 56, 0.15);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(42, 171, 123, 0.15);
+  }
+  .card-premium {
+    background: linear-gradient(135deg, rgba(13, 43, 30, 0.8) 0%, rgba(26, 92, 56, 0.2) 100%);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(42, 171, 123, 0.15);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.3), 0 0 0 1px rgba(42, 171, 123, 0.05);
+  }
+  .glow-green {
+    box-shadow: 0 0 20px rgba(14, 124, 90, 0.3);
+  }
+  .text-gradient {
+    background: linear-gradient(135deg, #2aab7b 0%, #e87722 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .btn-primary {
+    @apply bg-brand-teal hover:bg-brand-light text-white font-semibold px-5 py-2.5 rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-brand-teal/30 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-ghost {
+    @apply text-gray-400 hover:text-white hover:bg-white/5 px-4 py-2 rounded-lg transition-all duration-200;
+  }
+  .input-field {
+    @apply w-full bg-white/5 border border-white/10 text-white placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-teal focus:ring-1 focus:ring-brand-teal/30 transition-all duration-200;
+  }
+  .sidebar-item {
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-400 hover:text-white hover:bg-brand-green/30 transition-all duration-200 cursor-pointer text-sm font-medium;
+  }
+  .sidebar-item-active {
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-xl text-white bg-brand-green/40 border border-brand-teal/20 text-sm font-medium;
+  }
+  /* Hiệu ứng thanh quét phát quang trên webcam — chạy lên xuống liên tục */
+  .scan-line-effect {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    border-radius: inherit;
+  }
+  .scan-line-effect::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(46, 171, 123, 0.4) 20%,
+      rgba(46, 171, 123, 1) 50%,
+      rgba(46, 171, 123, 0.4) 80%,
+      transparent 100%);
+    box-shadow:
+      0 0 10px rgba(46, 171, 123, 0.8),
+      0 0 20px rgba(46, 171, 123, 0.5),
+      0 0 30px rgba(46, 171, 123, 0.3);
+    animation: scan-vertical 3s ease-in-out infinite;
+  }
+  .scan-line-effect::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,
+      transparent 0%,
+      rgba(46, 171, 123, 0.06) 50%,
+      transparent 100%);
+    animation: scan-glow 3s ease-in-out infinite;
+    pointer-events: none;
+  }
+  @keyframes scan-vertical {
+    0%, 100% { top: 0%; opacity: 0.7; }
+    50% { top: calc(100% - 3px); opacity: 1; }
+  }
+  @keyframes scan-glow {
+    0%, 100% { transform: translateY(-100%); }
+    50% { transform: translateY(100%); }
+  }
+}

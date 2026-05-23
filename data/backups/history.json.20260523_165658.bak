@@ -1,0 +1,104 @@
+[
+  {
+    "id": "5060259f-715",
+    "timestamp": "2026-05-23T16:56:51.974303",
+    "source": "webcam",
+    "image_url": "/data/images/5060259f-715.jpg",
+    "tong_so_hinh": 1,
+    "shapes": [
+      {
+        "stt": 1,
+        "loai": "tam_giac",
+        "ten_hinh": "Tam giác",
+        "do_tin_cay": 0.95,
+        "so_dinh": 3,
+        "box": [
+          213,
+          140,
+          487,
+          352
+        ],
+        "thong_so": {
+          "dien_tich": 58088,
+          "chu_vi": 972,
+          "chieu_rong": 274,
+          "chieu_cao": 212,
+          "so_dinh": 3,
+          "do_tron": 0.0,
+          "toa_do_tam": {
+            "x": 350,
+            "y": 246
+          }
+        },
+        "chi_tiet": {
+          "canh": [
+            231.0,
+            231.0,
+            231.0
+          ],
+          "goc": [
+            60.0,
+            60.0,
+            60.0
+          ],
+          "tong_goc": 180.0,
+          "phan_loai": "Tam giác (ước lệ từ bbox)"
+        }
+      }
+    ],
+    "tom_tat": {
+      "Tam giác": 1
+    }
+  },
+  {
+    "id": "4045d92a-b9d",
+    "timestamp": "2026-05-23T16:56:40.522821",
+    "source": "webcam",
+    "image_url": "/data/images/4045d92a-b9d.jpg",
+    "tong_so_hinh": 1,
+    "shapes": [
+      {
+        "stt": 1,
+        "loai": "tam_giac",
+        "ten_hinh": "Tam giác",
+        "do_tin_cay": 0.95,
+        "so_dinh": 3,
+        "box": [
+          164,
+          113,
+          412,
+          300
+        ],
+        "thong_so": {
+          "dien_tich": 46376,
+          "chu_vi": 870,
+          "chieu_rong": 248,
+          "chieu_cao": 187,
+          "so_dinh": 3,
+          "do_tron": 0.0,
+          "toa_do_tam": {
+            "x": 288,
+            "y": 206
+          }
+        },
+        "chi_tiet": {
+          "canh": [
+            207.1,
+            207.1,
+            207.1
+          ],
+          "goc": [
+            60.0,
+            60.0,
+            60.0
+          ],
+          "tong_goc": 180.0,
+          "phan_loai": "Tam giác (ước lệ từ bbox)"
+        }
+      }
+    ],
+    "tom_tat": {
+      "Tam giác": 1
+    }
+  }
+]
