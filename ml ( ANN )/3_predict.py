@@ -1,13 +1,6 @@
-"""
-Dự đoán hình học với ANN model.
-
-- Từ file: python 3_predict.py path/to/image.jpg
-- Webcam:  python 3_predict.py --camera
-"""
 import json
 import sys
 from pathlib import Path
-
 import cv2
 import numpy as np
 
@@ -26,7 +19,7 @@ try:
     with open(CLASS_NAMES_PATH, "r", encoding="utf-8") as f:
         CLASS_NAMES = json.load(f)
 except Exception as e:
-    print(f"❌ Không nạp model: {e}")
+    print(f" Không nạp được model: {e}")
     print(f"   Hãy huấn luyện bằng: python 2_train_model_ann.py")
     sys.exit(1)
 
@@ -59,11 +52,11 @@ def demo_predict_from_file(image_path: str):
     """Demo: Dự đoán từ file ảnh."""
     image_path = Path(image_path)
     if not image_path.exists():
-        raise FileNotFoundError(f"❌ File ảnh không tồn tại: {image_path}")
+        raise FileNotFoundError(f" File ảnh không tồn tại: {image_path}")
 
     img = cv2.imread(str(image_path))
     if img is None:
-        raise FileNotFoundError(f"❌ Không đọc được file ảnh: {image_path}")
+        raise FileNotFoundError(f" Không đọc được file ảnh: {image_path}")
 
     print(f"\n📷 Dự đoán từ file: {image_path}")
     shape_name, confidence = predict(img)
@@ -95,7 +88,7 @@ def demo_predict_from_camera():
     """Demo: Dự đoán real-time từ webcam."""
     cap = cv2.VideoCapture(0)
     if not cap.isOpened():
-        print("❌ Không mở được webcam")
+        print(" Không mở được webcam")
         return
 
     print("\n📷 Dự đoán từ webcam (nhấn 'q' để thoát)")
@@ -139,7 +132,7 @@ def demo_predict_from_camera():
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("\n💡 Cách dùng:")
+        print("\n Cách dùng:")
         print("   python 3_predict.py <image_path>  # Dự đoán từ file")
         print("   python 3_predict.py --camera      # Dự đoán từ webcam")
         sys.exit(1)
